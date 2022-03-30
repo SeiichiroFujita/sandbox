@@ -107,11 +107,10 @@ pred_prob = model.predict(X_test_t)
 
 # 評価データの予測結果を0もしくは1に丸め込み
 pred_tmp = np.round(pred_prob)
-
 pred = pred_tmp.astype(int)
 
+#提出
 submit = pd.read_csv("../input/sample_submission.csv", header=None)
-
 submit[1] = pred
 submit.to_csv("submit.csv", index=False, header=False)
 
